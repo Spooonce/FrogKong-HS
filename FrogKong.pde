@@ -33,7 +33,7 @@ void setup() {
   frog = loadImage("frog.png");
   princess = loadImage("Princess.jpg");
   ladder = loadImage("ladder.png");
-  frameRate(25);
+  frameRate(24);
 
  
 }
@@ -92,16 +92,39 @@ void barrelMove(){
   if(b1Y == 175){
     down = false;
   }
-  if(down == false && b1X < 300){
+  if(down == false && b1Y == 175){
     rightB = true;
   }
   if(b1X == 585){
    rightB = false; 
   }
-  if(rightB == false && b1X > 300){
+  if(rightB == false && b1X == 585){
    down = true; 
   }
- 
+  if(b1Y == 255){
+   down = false; 
+  }
+  if(down == false && b1Y == 255){
+   leftB = true; 
+  }
+  if(b1X == 15){
+   leftB = false; 
+  }
+  if(leftB == false && b1X == 15){
+   down = true; 
+  }
+  if(b1Y == 335){
+    down = false;
+  }
+  if(down == false && b1Y == 335){
+   rightB = true; 
+  }
+  if(b1X == 585){
+ rightB = false;
+  }
+  if(rightB == false && b1X == 585){
+   down = true; 
+  }
 }
 
 void frogMove(){
