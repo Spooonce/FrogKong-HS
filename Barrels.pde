@@ -4,7 +4,6 @@ void barrelMove() {
 
     ellipse(b1X, b1Y, 30, 30);
 
-
     if (down == true) {//down
       b1Y = b1Y + 5;
     }
@@ -395,7 +394,22 @@ void barrelMove() {
 
   //--------------------------------------------------------------------\\
 
-  if (start == false) {//title screen
+
+  if (keyPressed) {//starts game
+    if (key == ' ') {
+      start = true;
+      soundtrack.play();
+    }
+  }
+  if (winner == true) {//frog gets to princess
+    fill(#1AEA00);
+    textSize(50);
+    text("You Win", width/2, height/2);
+    textSize(25);
+    text("Press R to restart", width/2, 500);
+    wintrack.play();
+    soundtrack.pause();
+  } else if (start == false) {//title screen
     fill(0);
     rect(0, 0, 600, 600);
     textFont(title);
@@ -406,20 +420,4 @@ void barrelMove() {
     textSize(25);
     text("Press SPACE to begin", width/2, 500);
   }
-
-  if (keyPressed) {//starts game
-    if (key == ' ') {
-      start = true;
-    }
-  }
-  
-  
-   if(winner == true){
-   fill(0);
-   rect(0,0,600,600);
-   fill(#1AEA00);
-   textSize(50);
-   text("You Win",width/2,height/2);
- 
- }
 }
